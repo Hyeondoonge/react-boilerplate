@@ -16,11 +16,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Analogue Clock'
-    })
-  ],
+  plugins: [new HtmlWebpackPlugin({ template: 'public/index.html' })],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
