@@ -4,6 +4,9 @@ const { ProvidePlugin } = require('webpack');
 
 module.exports = {
   mode: 'development',
+  resolve: {
+    extensions: ['.jsx', '.js']
+  },
   module: {
     rules: [
       {
