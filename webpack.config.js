@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const { ProvidePlugin } = require('webpack');
 
 module.exports = {
   mode: 'development',
@@ -17,7 +18,12 @@ module.exports = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({ template: 'public/index.html' })],
+  plugins: [
+    new HtmlWebpackPlugin({ template: 'public/index.html' }),
+    new ProvidePlugin({
+      React: 'react'
+    })
+  ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
