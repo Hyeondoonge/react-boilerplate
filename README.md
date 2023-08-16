@@ -1,6 +1,6 @@
 # react-boilerplate
 
-react, webpack, styled-components 기반 환경을 빠르게 세팅하기 위한 boilerplate
+react, ts, webpack, styled-components 기반 환경을 빠르게 세팅하기 위한 boilerplate
 
 ## Clone the repo
 
@@ -17,7 +17,7 @@ npm install
 ## Running Server
 
 ```
-npm run start
+npm start
 ```
 
 ## Build App
