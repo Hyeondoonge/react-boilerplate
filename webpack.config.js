@@ -1,21 +1,23 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path');
 const { ProvidePlugin } = require('webpack');
 
 module.exports = {
   mode: 'development',
   resolve: {
-    extensions: ['.jsx', '.js']
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
+    plugins: [new TsconfigPathsPlugin()]
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(ts|tsx|js|jsx)$/,
         exclude: path.resolve(__dirname, 'node_modules'),
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
+            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript']
           }
         }
       }
